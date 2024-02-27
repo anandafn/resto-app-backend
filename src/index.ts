@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import "dotenv/config";
 import myUserRoute from "./routes/myUserRoutes";
 import myRestaurantRoute from "./routes/MyRestaurantRoute";
+import restaurantRoute from "./routes/RestaurantRoute";
 import { v2 as cloudinary } from "cloudinary";
 
 // COnnect to mongodb database
@@ -28,6 +29,7 @@ app.get("/health", async (req: Request, res: Response) => {
 
 app.use("/api/my/user", myUserRoute);
 app.use("/api/my/restaurant", myRestaurantRoute);
+app.use("/api/restaurant", restaurantRoute);
 
 app.listen(7000, () => {
   console.log("Server is running on port 7000");
